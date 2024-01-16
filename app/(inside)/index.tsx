@@ -18,15 +18,9 @@ const Page = () => {
 
   // Prompt user to enter a call id and navigate to the room
   const onJoinMeeting = () => {
-    Alert.prompt(
-      'Join',
-      'Please enter your Call ID:',
-      (id) => {
-        console.log('Joining call: ', id)
-        router.push(`/(inside)/(room)/${id}`)
-      },
-      'plain-text'
-    )
+    // only works on iOS
+    // maybe its better to handle it by adding input
+    Alert.prompt('Join', 'Please enter your Call ID:', (id) => router.push(`/(inside)/(room)/${id}`), 'plain-text')
   }
 
   return (
